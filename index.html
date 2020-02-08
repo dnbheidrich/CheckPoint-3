@@ -13,6 +13,30 @@
   </head>
 
   <body>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12">
+      <h1>Task Maker</h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <form onsubmit="app.listController.addList(event)">
+        <div class="form-group">
+            <label for="">List Name</label>
+            <input type="text" name="listName" class="form-control" placeholder=""
+                aria-describedby="helpId">
+            <button class="btn btn-primary" type="submit">
+                Create List
+            </button>
+        </div>
+    </form>
+    </div>
+  </div>
+  <div id = "listRow" class="row"></div>
+</div>
     <script src="app/main.js" type="module"></script>
   </body>
 </html>
