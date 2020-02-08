@@ -55,8 +55,10 @@ export default class ListController {
 
   }
 
-  deleteList(event){
+  deleteList(){
 event.preventDefault();
+
+
   }
 
   //TODO: Your app will need the ability to create, and delete both lists and listItems
