@@ -38,15 +38,15 @@ _store.saveState()
   }
   
   deleteTask(id){
-    let task = _store.State.lists.find(list => task.id !== id)
+    let list = _store.State.list.find(list => list.id === id)
+    list.task
 
-    let c = confirm("Are you sure?");
-    if (c == true) {
-      _store.State.tasks = task;
-    } else {
-      return;
-    }
-
+    // let c = confirm("Are you sure?");
+    // if (c == true) {
+    // } else {
+    //   return;
+    // }
+    _store.saveState()
   }
 
   //TODO  Here is where we handle all of our business logic,
