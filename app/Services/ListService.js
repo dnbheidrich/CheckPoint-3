@@ -37,15 +37,15 @@ _store.saveState()
    _store.saveState()
   }
   
-  deleteTask(id){
-   let task = _store.State.lists.filter(list => list.task !== id)
+  deleteTask(listId){
+   let task = _store.State.lists.filter(list => list.task !== listId)
    
    
    let c = confirm("Are you sure?");
    if (c == true) {
     task = _store.State.tasks
     } else {
-      return;
+      return task
     }
     _store.saveState()
   }
