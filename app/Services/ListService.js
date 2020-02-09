@@ -45,6 +45,8 @@ _store.saveState()
    if (c == true) {
     task = _store.State.tasks
     } else {
+      console.log(task);
+      
       return task
     }
     _store.saveState()

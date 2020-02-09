@@ -11,7 +11,7 @@ export default class Task {
     return /*html*/`
 <div class="col-6">
 <h1>${this.taskName}</h1>
-<button onclick="app.listController.deleteTask('${this.id}')" class="btn btn-danger">Delete</button>
+<button onclick="app.listController.deleteTask('${this.listId}')" class="btn btn-danger">Delete</button>
 </div>
 `
   }
