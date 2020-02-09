@@ -25,12 +25,12 @@ export default class List {
     <label for="">Tasks</label>
     <input type="text" name="taskName" class="form-control" placeholder=""
     aria-describedby="helpId">
-    <button class="btn btn-primary" type="submit">Add Task</button>
+    <button class="btn btn-primary" type="submit">
+    Add Task
+    </button>
     <button onclick="app.listController.deleteList('${this.id}')" class="btn btn-danger">Delete</button>
                         </div>
                     </form>
-   
-    
     </div>
     `
   //Be sure to add the methods needed to create the view template for this model

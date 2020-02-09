@@ -21,7 +21,7 @@ export default class ListController {
     _drawLists();
   }
   addList(event) {
-    debugger
+    
 
     event.preventDefault();
 
@@ -55,8 +55,22 @@ export default class ListController {
 
   }
 
-  deleteList(){
-event.preventDefault();
+
+
+  deleteTask(id){
+    debugger
+    _listService.deleteTask(id)
+    _drawLists()
+  }
+
+
+
+  deleteList(id){
+  
+debugger
+_listService.deleteList(id);
+_drawLists();
+
 
 
   }

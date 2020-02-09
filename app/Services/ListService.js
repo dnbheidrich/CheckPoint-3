@@ -12,11 +12,21 @@ class ListService {
 _store.State.lists.push(newList)
 _store.saveState()
   }
-  deleteTask(id) {
-    let tasks = _store.State.tasks.filter(task => task.id !== id)
-    _store.State.tasks = tasks
-   _store.saveState()
 
+  deleteList(id) {
+    let lists = _store.State.lists.filter(list => list.id !== id)
+    
+
+    let c = confirm("Are you sure?");
+    if (c == true) {
+      _store.State.lists = lists;
+    } else {
+      return;
+    }
+    
+    _store.saveState()
+    
+  
   }
   addTask(obj, listId) {
     let newTask = new Task(obj)
@@ -25,6 +35,18 @@ _store.saveState()
     console.log("storeTasks", _store.State.lists);
     
    _store.saveState()
+  }
+  
+  deleteTask(id){
+    let task = _store.State.lists.find(list => task.id !== id)
+
+    let c = confirm("Are you sure?");
+    if (c == true) {
+      _store.State.tasks = task;
+    } else {
+      return;
+    }
+
   }
 
   //TODO  Here is where we handle all of our business logic,
