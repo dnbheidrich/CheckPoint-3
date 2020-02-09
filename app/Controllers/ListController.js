@@ -6,6 +6,7 @@ function _drawLists() {
   let lists = _store.State.lists
   let listElem = document.getElementById("listRow")
   let template = ""
+  
 
   lists.forEach(list => {
     template += list.Template
