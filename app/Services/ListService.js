@@ -44,6 +44,7 @@ _store.saveState()
     // can seem to grab the list but having trouble deleting the task off the list
     // why list.task is not referencing here but works in addTask
     let list = _store.State.lists.find(list => list.id === listId)
+    // list.id.filter()
 
   
     
