@@ -32,7 +32,7 @@ export default class ListController {
       name: formData.listName.value
     }
 
-    console.log(newList);
+    // console.log(newList);
 
     _listService.addList(newList)
     _drawLists() 
@@ -50,7 +50,7 @@ export default class ListController {
     console.log(newTask);
 
     _listService.addTask(newTask, id);
-    console.log(_store.State.tasks);
+    // console.log(_store.State.tasks);
     
     _drawLists();
 
@@ -59,7 +59,7 @@ export default class ListController {
 
 
   deleteTask(id){
-    debugger
+    // debugger
     _listService.deleteTask(id)
     _drawLists()
   }
@@ -67,8 +67,8 @@ export default class ListController {
 
 
   deleteList(id){
-  
-debugger
+
+// debugger
 _listService.deleteList(id);
 _drawLists();
 

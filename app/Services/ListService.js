@@ -14,6 +14,7 @@ _store.saveState()
   }
 
   deleteList(id) {
+    // why does filter work here but not when deleting taks
     let lists = _store.State.lists.filter(list => list.id !== id)
     
 
@@ -32,23 +33,22 @@ _store.saveState()
     let newTask = new Task(obj)
     let list = _store.State.lists.find(list => list.id === listId)
     list.task.push(newTask)
-    console.log("storeTasks", _store.State.lists);
+    // console.log("storeTasks", _store.State.lists);
     
    _store.saveState()
   }
   
   deleteTask(listId, taskId){
-   let list = _store.State.lists.filter(list => list.id !== listId)
-   let task = _store.State.lists.filter(list => list.task !== taskId);
-
-   
-   
-   let c = confirm("Are you sure?");
-   if (c == true) {
-     _store.State.lists = task
+    // can only pop or shift them off the array having trouble filtering out the id of the task
+    // can seem to grab the list but having trouble deleting the task off the list
+    // why list.task is not referencing here but works in addTask
+    let list = _store.State.lists.find(list => list.id === listId)
+    
+    let c = confirm("Are you sure?");
+    if (c == true) {
+      
+      list.task.shift(taskId)
   } else {
-    list = _store.State.lists
-      console.log(list);
       
       return
     }
