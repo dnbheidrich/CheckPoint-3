@@ -14,6 +14,7 @@ _store.saveState()
   }
 
   deleteList(id) {
+    // confused on how this works relative to deleting tasks
     // why does filter work here but not when deleting taks
     let lists = _store.State.lists.filter(list => list.id !== id)
     
@@ -43,11 +44,16 @@ _store.saveState()
     // can seem to grab the list but having trouble deleting the task off the list
     // why list.task is not referencing here but works in addTask
     let list = _store.State.lists.find(list => list.id === listId)
+
+  
+    
+    
+
     
     let c = confirm("Are you sure?");
     if (c == true) {
       
-      list.task.shift(taskId)
+      list.task.shift()
   } else {
       
       return
