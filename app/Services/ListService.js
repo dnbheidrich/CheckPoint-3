@@ -37,17 +37,20 @@ _store.saveState()
    _store.saveState()
   }
   
-  deleteTask(listId){
-   let task = _store.State.lists.filter(list => list.task !== listId)
+  deleteTask(listId, taskId){
+   let list = _store.State.lists.filter(list => list.id !== listId)
+   let task = _store.State.lists.filter(list => list.task !== taskId);
+
    
    
    let c = confirm("Are you sure?");
    if (c == true) {
-    task = _store.State.tasks
-    } else {
-      console.log(task);
+     _store.State.lists = task
+  } else {
+    list = _store.State.lists
+      console.log(list);
       
-      return task
+      return
     }
     _store.saveState()
   }
