@@ -33,8 +33,8 @@ _store.saveState()
   addTask(obj, listId) {
     let newTask = new Task(obj)
     let list = _store.State.lists.find(list => list.id === listId)
-    list.task.push(newTask)
-    // console.log("storeTasks", _store.State.lists);
+  list.task.push(newTask)
+     console.log("storeTasks", _store.State.lists);
     
    _store.saveState()
   }
@@ -43,9 +43,15 @@ _store.saveState()
     // can only pop or shift them off the array having trouble filtering out the id of the task
     // can seem to grab the list but having trouble deleting the task off the list
     // why list.task is not referencing here but works in addTask
+    // splice and findIndex methods very helpful
     let list = _store.State.lists.find(list => list.id === listId)
-    // list.id.filter()
+    let task = list.task.findIndex(task => task.id === taskId)
+    
+    list.task.splice(task, 1)
 
+    // console.log("from deleteT", list);
+    
+// _store.State.lists
   
     
     
@@ -54,7 +60,7 @@ _store.saveState()
     let c = confirm("Are you sure?");
     if (c == true) {
       
-      list.task.shift()
+  
   } else {
       
       return
